@@ -84,6 +84,7 @@ EOTEXT
       ->setShowHeader(false)
       ->addColumn('exists', array('title' => ''))
       ->addColumn('status', array('title' => pht('Status')))
+      ->addColumn('branch',  array('title' => pht('Branch')))
       ->addColumn('title',  array('title' => pht('Title')));
 
     $info = isort($info, 'sort');
@@ -95,10 +96,15 @@ EOTEXT
         'status' => tsprintf(
           "<fg:{$spec['color']}>%s</fg>",
           $spec['statusName']),
+        'branch' => vsprintf(
+          ' |%s| ', $revision['branch']
+        ),
         'title'  => tsprintf(
-          '**D%d:** %s',
+          '**D%d:** %s | %s',
           $revision['id'],
-          $revision['title']),
+          $revision['title'],
+          $revision['uri']
+        ),
       ));
     }
 
