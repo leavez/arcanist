@@ -1,3 +1,6 @@
+display more info when use `arc list`, compared to the offical version.
+`* Needs Review  |checker|  D6965: modify checker | http://*******/D6965`
+---------------
 Arcanist is the command-line tool for [Phabricator](http://phabricator.org).
 It allows you to interact with Phabricator installs to send code for review,
 download patches, transfer files, view status, make API calls, and various other
